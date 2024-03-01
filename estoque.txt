@@ -1,1 +1,3 @@
-banana|10|frutas|50
+banana|10|frutas|40
+laranja|7|frutas|65
+batata|3|verduras|45

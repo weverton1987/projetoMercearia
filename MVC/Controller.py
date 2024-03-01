@@ -167,7 +167,7 @@ class ControllerVenda:
             if existe == False:
                 if i.produto.nome == nomeProduto:
                     existe = True
-                    if i.quantidade >= quantidadeVendida:
+                    if int(i.quantidade) >= int(quantidadeVendida):
                         quantidade = True
                         i.quantidade = int(i.quantidade) - int(quantidadeVendida)
                         vendido = Venda(Produtos(i.produto.nome, i.produto.preco, i.produto.categoria), vendedor, comprador, quantidadeVendida)

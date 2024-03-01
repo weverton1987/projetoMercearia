@@ -1,4 +1,4 @@
-laticinios
-legumes
 frios
+legumes
 frutas
+verduras

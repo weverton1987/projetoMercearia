@@ -79,7 +79,7 @@ class DaoFornecedor:
             
     @classmethod
     def ler(cls):
-        with open('fornecedores', 'r') as arq:
+        with open('fornecedores.txt', 'r') as arq:
             cls.fornecedores = arq.readlines()
         cls.fornecedores = list(map(lambda x: x.replace('\n', ''), cls.fornecedores))
         cls.fornecedores = list(map(lambda x: x.split('|'), cls.fornecedores))
