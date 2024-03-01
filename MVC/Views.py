@@ -56,7 +56,10 @@ if __name__ == '__main__':
                 ))
                 if decidir == 1:
                     produto = input('Digite o produto que deseja cadastrar\n')
-                    est.cadastrar_produto(produto)
+                    preco = input('Digite o preço do produto que deseja cadastrar\n')
+                    categoria = input('Digite a categoria do produto que deseja cadastrar\n')
+                    quantidade = input('Digite a quantidade do produto que deseja cadastrar\n')
+                    est.cadastrar_produto(produto, preco, categoria, quantidade)
                 elif decidir == 2:
                     produto = input('Digite o produto que deseja remover\n')
                     est.remover_produto(produto)
@@ -170,13 +173,32 @@ if __name__ == '__main__':
                     'Digite 1 para cadastrar uma venda\n'
                     'Digite 2 para ver o relatório dos produtos\n'
                     'Digite 3 para mostrar todas as vendas\n'
+                    'Digite 4 para voltar\n'
                 ))
                 if decidir == 1:
                     nomeProduto = input('Digite o nome do produto:\n')
                     vendedor = input('Digite o nome do vendedor:\n')
                     comprador = input('Digite o nome do comprador:\n')
-                    quantidadeVendida = int(input('Digite a quantidade vendida:\n'))
+                    quantidadeVendida = input('Digite a quantidade vendida:\n')
                     ven.cadastrar_venda(nomeProduto, vendedor, comprador, quantidadeVendida)
                 elif decidir == 2:
-                    pass
-                    
+                    ven.relatorioProduto()
+                elif decidir == 3:
+                    dataInicio = input('Digite a data de início no formato de dd/mm/aaaa')
+                    dataTermino = input('Digite a data de término no formato de dd/mm/aaaa')
+                    ven.mostrarVenda(dataInicio, dataTermino)
+                else:
+                    break
+        if local == 7:
+            a = Controller.ControllerVenda()
+            while True:
+                decidir = int(input(
+                    'Digite 1 para ver os produtos mais vendidos\n'
+                    'Digite 2 para voltar\n'
+                ))
+                if decidir == 1:
+                    a.relatorioProduto()
+                else:
+                    break
+        else:
+            break
